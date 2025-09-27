@@ -1,0 +1,86 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body{
+  background: linear-gradient(to top, #EAEFBD, #C9E3AC ); 
+  color: #37371F
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 600px;
+  height: 400px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.flip-card:hover {
+  cursor: pointer; 
+}
+
+.buttons{
+  display:flex; 
+  direction: row; 
+  justify-self: center; 
+}
+
+button{
+  margin: 20px; 
+  padding: 10px 25px; 
+  font-size: 1.6rem;
+}
+button:hover{
+  will-change: filter;
+  transition: filter 300ms;
+   filter: drop-shadow(0 0 0.5em #61dafbaa);
+}
+.totalCards{
+  padding: 1px 2px; 
+  background: linear-gradient(to right, #0ba8e6, #90a678 ); 
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  color: white; 
+  display: inline-block; 
+  
+}
+
+
+#planet-bg {
+  width: 250px; /* adjust size */
+  height: 250px;
+  border-radius: 50%; /* make it circular */
+  z-index: 100; /* behind all content */
+  transition: transform 10s linear; /* smooth rotation */
+  justify-self: center; 
+  margin-bottom: 0px; 
+  box-shadow: 0px 0px 30px rgba(0, 89, 255, 0.372); 
+}
+
+#planet-bg:hover{
+  transform: rotate(700deg)
+}
