@@ -84,3 +84,71 @@ button:hover{
 #planet-bg:hover{
   transform: rotate(700deg)
 }
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.searchBar form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(to right, #f3ecc7, #c9e3ac);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(55, 55, 31, 0.15);
+}
+
+.searchBar label {
+  font-weight: bold;
+  color: #37371f;
+}
+
+.searchBar input[type="text"] {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #90a678;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.searchBar input[type="text"]:focus {
+  border-color: #0ba8e6;
+  box-shadow: 0 0 6px rgba(11, 168, 230, 0.5);
+  transform: translateY(-3px); 
+}
+
+.searchBar button {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #10bbff, #030061);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: filter 0.3s, transform 0.2s, box-shadow 0.5s, background 0.3s;
+}
+
+.searchBar button:hover {
+  filter: drop-shadow(0 0 0.4em #61dafbaa);
+  transform: scale(1.05);
+}
+
+.searchBar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.searchBar button.wrong{
+  background: rgb(219, 93, 93);
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.655);
+}
+
+.searchBar button.correct {
+  background:rgb(84, 168, 97);
+  box-shadow: 0px 0px 10px rgba(0, 255, 60, 0.655);
+}

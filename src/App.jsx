@@ -7,6 +7,19 @@ import Card from './Card.jsx'
 function App() {
   const [cardNum, setcardNum] = useState(0)
   const [flip, setFlipped] = useState(false); 
+  const [answer, setAnswer] = useState("");
+  const [correct_guess, setCheckedGuess] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault(); // stop page refresh
+    if (cards[cardNum].back.toLowerCase() != answer.toLowerCase()){
+      setCheckedGuess('wrong');
+      
+    }
+    else {
+      setCheckedGuess("correct");
+    }
+  };
+
   const cards = [
   {
     front:"Colombia", 
@@ -71,11 +84,39 @@ function App() {
        <div className="flip-card" onClick={() => setFlipped(!flip)}>
         <Card front={cards[cardNum].front} back={cards[cardNum].back} image={cards[cardNum].image} flip={flip} />
         </div>
+
+      <div className="searchBar">
+    <form onSubmit={handleSubmit} style={{ display: "flex", gap: "8px" }}>
+      <label htmlFor="guessInput">Your guess:</label>
+      <input
+        type="text"
+        placeholder="Guess here..."
+        value={answer}
+        onChange={(e) => setAnswer(e.target.value)}
+      />
+      <button type="submit"  className={correct_guess}>Submit</button>
+    </form>
+    </div>
     <div className="buttons">
     <button onClick={()=> {setFlipped(false); 
-    setcardNum(Math.floor(Math.random() * cards.length)); }}>⬅️</button>
+    setcardNum(Math.max(0, cardNum - 1)); 
+    setCheckedGuess(""); 
+    setAnswer("")}}
+    style={{
+      opacity: cardNum === 0 ? 0.5 : 1, 
+      cursor: cardNum === 0 ? "not-allowed" : "pointer"
+    }}
+    >⬅️</button>
     <button onClick={()=>{setFlipped(false); 
-      setcardNum(Math.floor(Math.random() * cards.length));}}>➡️</button>
+      setcardNum(Math.min(cards.length - 1, cardNum + 1)); 
+      setCheckedGuess(""); 
+      setAnswer("")}}
+          disabled={cardNum === cards.length - 1}  // disable if at end
+    style={{
+      opacity: cardNum === cards.length - 1 ? 0.5 : 1, 
+      cursor: cardNum === cards.length - 1 ? "not-allowed" : "pointer"
+    }}
+    >➡️</button>
     </div>
     </>
   )
