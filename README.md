@@ -5,8 +5,11 @@ Submitted by: **Sebastian Cruz**
 This web app: **Helps you learn the captials using flashcards**
 
 Time spent: **5** hours spent in total. 
+
 **3** hours for project 2
+
 **2** hours for project 3
+
 
 ## Required Features
 
